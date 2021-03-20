@@ -39,8 +39,9 @@ public class MainPageTests extends TestBase{
         $(".header__tower-panel").$(byText("Нет, другой")).click();
         $(".header__tower-input").sendKeys("Бабаюрт");
         $(".header__tower-form .header__tower-result").shouldHave(text("Бабаюрт")).click();
-        $(".header__tower-form").$(byText("Да, я тут")).click();
-
+        sleep(1000); // wait till the element gets visible
+        $(".header__tower-form").parent().$(byText("Да, я тут")).click();
+        sleep(1000);// wait till the element gets visible
         $(".select_in").shouldHave(text("Бабаюрт"));
     }
 
@@ -51,4 +52,9 @@ public class MainPageTests extends TestBase{
         $$(".categories--title").shouldHave(CollectionCondition.textsInAnyOrder("Здоровье", "Красота", "Для детей", "Зоотовары"));
     }
 
+    @Test
+    @DisplayName("Test of authorisation")
+    public void authorisationWithEmailTest(){
+
+    }
 }
