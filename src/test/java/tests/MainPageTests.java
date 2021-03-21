@@ -51,10 +51,4 @@ public class MainPageTests extends TestBase{
         open("");
         $$(".categories--title").shouldHave(CollectionCondition.textsInAnyOrder("Здоровье", "Красота", "Для детей", "Зоотовары"));
     }
-
-    @Test
-    @DisplayName("Test of authorisation")
-    public void authorisationWithEmailTest(){
-
-    }
 }

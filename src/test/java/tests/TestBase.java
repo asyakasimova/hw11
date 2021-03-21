@@ -5,6 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.EaptekaAгthorisationPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
@@ -12,6 +13,8 @@ import static helpers.AttachmentsHelper.*;
 import static helpers.DriverHelper.configureDriver;
 
 public class TestBase {
+
+    EaptekaAгthorisationPage eaptekaAuthPage = new EaptekaAгthorisationPage();
 
     @BeforeAll
     static void setup() {
