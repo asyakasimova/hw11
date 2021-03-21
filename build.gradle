@@ -43,6 +43,7 @@ test {
 
 tasks.withType(Test) {
     systemProperties += System.properties
+
 }
 
 tasks.withType(JavaCompile) {
