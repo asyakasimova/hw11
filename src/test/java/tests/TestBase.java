@@ -33,7 +33,7 @@ public class TestBase {
         } */
     }
 
-    /*@AfterEach
+    @AfterEach
     public void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
@@ -41,6 +41,6 @@ public class TestBase {
         if(System.getProperty("video_storage") != null)
             attachVideo();
         closeWebDriver();
-    } */
+    }
 }
 
