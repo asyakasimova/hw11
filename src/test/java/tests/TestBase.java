@@ -18,19 +18,19 @@ public class TestBase {
 
     @BeforeAll
     static void setup() {
-       // addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.startMaximized = true;
         configureDriver();
 
-     /* if (System.getProperty("remote_driver") != null) {
+     if (System.getProperty("remote_driver") != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
 
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = System.getProperty("remote_driver");
-        } */
+        }
     }
 
     @AfterEach
