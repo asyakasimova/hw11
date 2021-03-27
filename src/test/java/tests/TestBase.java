@@ -9,6 +9,7 @@ import pages.EaptekaAгthorisationPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static config.ConfigHelper.isVideoOn;
 import static helpers.AttachmentsHelper.*;
 import static helpers.DriverHelper.configureDriver;
 
@@ -38,8 +39,7 @@ public class TestBase {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        if(System.getProperty("video_storage") != null)
-            attachVideo();
+        if(isVideoOn()) attachVideo();
         closeWebDriver();
     }
 }
