@@ -32,9 +32,9 @@ public class AttachmentsHelper {
         }
 
         @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-        public static String attachVideo() {
+        public static String attachVideo(String sessionId) {
             return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
-                    + getVideoUrl()
+                    + getWebVideoUrl(sessionId)
                     + "' type='video/mp4'></video></body></html>";
         }
 
@@ -42,14 +42,14 @@ public class AttachmentsHelper {
             return System.getProperty("video_storage") + getSessionId() + ".mp4";
         }
 
-    /*public static String getWebVideoUrl(String sessionId) {
-        try {
-            return new URL(getWebVideoStorage() + sessionId + ".mp4") + "";
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+        public static String getWebVideoUrl(String sessionId) {
+            try {
+                return new URL(getWebVideoStorage() + sessionId + ".mp4") + "";
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
+            return null;
         }
-        return null;
-    }*/
 
         public static String getSessionId(){
             return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();

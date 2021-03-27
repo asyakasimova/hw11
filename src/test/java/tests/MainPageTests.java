@@ -1,14 +1,11 @@
 package tests;
 
-
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import org.assertj.core.internal.bytebuddy.pool.TypePool;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -49,6 +46,6 @@ public class MainPageTests extends TestBase{
     @DisplayName("Base blocks are present")
     public void baseBlocksPresentTest(){
         open("");
-        $$(".categories--title").shouldHave(CollectionCondition.textsInAnyOrder("Здоровье", "Красота", "Для детей", "Зоотовары"));
+        $$(".categories--title").shouldHave(textsInAnyOrder("Здоровье", "Красота", "Для детей", "Зоотовары"));
     }
 }

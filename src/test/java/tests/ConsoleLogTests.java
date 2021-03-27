@@ -1,7 +1,5 @@
 package tests;
 
-
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static helpers.AttachmentsHelper.getConsoleLogs;
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.core.IsNot.not;
 
@@ -23,6 +22,6 @@ public class ConsoleLogTests extends TestBase{
         $(".sum").click();
 
         String consoleLog = getConsoleLogs();
-        MatcherAssert.assertThat(consoleLog, not(containsString("SEVERE")));
+        assertThat(consoleLog, not(containsString("SEVERE")));
     }
 }

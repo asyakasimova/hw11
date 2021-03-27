@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -21,12 +22,12 @@ public class LoginTests extends TestBase{
                 open(""));
 
         step("Select email authentification", () ->
-        $("#signin-entry").$("a").click());
+            $("#signin-entry").$("a").click());
 
         step("Fill credentials", () ->
-        eaptekaAuthPage.login(ConfigHelper.getEmailUsername(), ConfigHelper.getEmailPassword()));
+            eaptekaAuthPage.login(ConfigHelper.getEmailUsername(), ConfigHelper.getEmailPassword()));
 
         step("Verify login success", () ->
-        $(".SignIn-line").shouldHave(Condition.text("Выход")));
+            $(".SignIn-line").shouldHave(text("Выход")));
     }
 }

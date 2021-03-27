@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
-public class EaptekaAгthorisationPage {
+public class EaptekaAuthorizationPage {
 
     private final static SelenideElement
             mainDiv = $(".modal-content"),

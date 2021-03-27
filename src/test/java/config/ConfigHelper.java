@@ -31,8 +31,8 @@ public class ConfigHelper {
         return getWebConfig().webUrl();
     }
 
-    private static AuthorisationConfig getAuthorisationConfig() {
-        return ConfigFactory.newInstance().create(AuthorisationConfig.class, System.getProperties());
+    private static AuthorizationConfig getAuthorisationConfig() {
+        return ConfigFactory.newInstance().create(AuthorizationConfig.class, System.getProperties());
     }
 
     public static String getEmailUsername(){
@@ -42,6 +42,4 @@ public class ConfigHelper {
     public static String getEmailPassword(){
         return getAuthorisationConfig().emailPassword();
     }
-
-
 }

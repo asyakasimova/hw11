@@ -5,7 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.EaptekaAгthorisationPage;
+import pages.EaptekaAuthorizationPage;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
@@ -15,7 +15,7 @@ import static helpers.DriverHelper.configureDriver;
 
 public class TestBase {
 
-    EaptekaAгthorisationPage eaptekaAuthPage = new EaptekaAгthorisationPage();
+    EaptekaAuthorizationPage eaptekaAuthPage = new EaptekaAuthorizationPage();
 
     @BeforeAll
     static void setup() {
@@ -24,22 +24,24 @@ public class TestBase {
         Configuration.startMaximized = true;
         configureDriver();
 
-     if (System.getProperty("remote_driver") != null) {
+     /*if (System.getProperty("remote_driver") != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
 
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = System.getProperty("remote_driver");
-        }
+        } */
     }
 
     @AfterEach
     public void afterEach() {
+        String sessionId = getSessionId();
+
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        if(isVideoOn()) attachVideo();
+        if(isVideoOn()) attachVideo(sessionId);
         closeWebDriver();
     }
 }
