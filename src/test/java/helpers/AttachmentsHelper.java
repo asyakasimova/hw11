@@ -6,9 +6,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
+import static config.ConfigHelper.getWebVideoStorage;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class AttachmentsHelper {
@@ -38,6 +41,15 @@ public class AttachmentsHelper {
         public static String getVideoUrl() {
             return System.getProperty("video_storage") + getSessionId() + ".mp4";
         }
+
+    /*public static String getWebVideoUrl(String sessionId) {
+        try {
+            return new URL(getWebVideoStorage() + sessionId + ".mp4") + "";
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }*/
 
         public static String getSessionId(){
             return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
