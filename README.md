@@ -18,4 +18,5 @@ Java, Gradle, Junit5, Selenide, Allure Reports, Jenkins, Selenoid, Notifications
 ![Allure Report](https://github.com/asyakasimova/hw11/blob/master/screenshots/Allure.png)
 
 **Telegram bot notification**
+
 ![Telegram bot notification](https://github.com/asyakasimova/hw11/blob/master/screenshots/NotBot.png)
