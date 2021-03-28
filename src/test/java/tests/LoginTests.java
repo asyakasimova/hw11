@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
 import config.ConfigHelper;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.DisplayName;
