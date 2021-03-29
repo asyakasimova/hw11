@@ -17,7 +17,6 @@ public class ConsoleLogTests extends TestBase{
 
     @Test
     @DisplayName("Checks if there is no errors in the console log")
-    @Disabled
     public void consoleLogNoErrorsTest() {
         open("/personal/cart/");
         $(".sum").click();

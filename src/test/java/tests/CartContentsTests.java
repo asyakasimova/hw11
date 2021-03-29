@@ -14,7 +14,6 @@ public class CartContentsTests extends TestBase{
 
     @Test
     @DisplayName("Test checks that the cart is empty initially")
-    @Disabled
     public void checkCartIsEmptyTest(){
         open("");
         $(".sum").click();

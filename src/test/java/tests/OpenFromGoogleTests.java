@@ -1,6 +1,7 @@
 package tests;
 
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class OpenFromGoogleTests {
 
     @Test
+    @Disabled
     void testOpenFromGoogle() {
         open("http://google.com");
         $("[name=q]").setValue("Еаптека").pressEnter();

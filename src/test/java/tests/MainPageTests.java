@@ -15,7 +15,6 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPageTests extends TestBase{
     @Test
     @DisplayName("Page should have text \"СБЕР ЕАПТЕКА – интернет-аптека Москвы\"")
-    @Disabled
     public void mainPageTest(){
         open("");
 
@@ -24,7 +23,6 @@ public class MainPageTests extends TestBase{
 
     @Test
     @DisplayName("A dialog should appear for user to choose his region")
-    @Disabled
     public void geographicalPositioningTest() {
         open("");
         $(".header__tower").$(byText("Да, я тут")).click();
@@ -34,7 +32,6 @@ public class MainPageTests extends TestBase{
 
     @Test
     @DisplayName("User should can to choose his region manually")
-    @Disabled
     public void choosePositioningManuallyTest(){
         open("");
         $(".header__tower-panel").$(byText("Нет, другой")).click();
@@ -48,7 +45,6 @@ public class MainPageTests extends TestBase{
 
     @Test
     @DisplayName("Base blocks are present")
-    @Disabled
     public void baseBlocksPresentTest(){
         open("");
         $$(".categories--title").shouldHave(textsInAnyOrder("Здоровье", "Красота", "Для детей", "Зоотовары"));

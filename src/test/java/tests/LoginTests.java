@@ -17,7 +17,6 @@ public class LoginTests extends TestBase{
 
     @Test
     @DisplayName("Successful authorisation with e-mail")
-    @Disabled
     public void authorisationWithEmailTest(){
         step("Open main page", () ->
                 open(""));
