@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ public class ConsoleLogTests extends TestBase{
 
     @Test
     @DisplayName("Checks if there is no errors in the console log")
+    @Disabled
     public void consoleLogNoErrorsTest() {
         open("/personal/cart/");
         $(".sum").click();
